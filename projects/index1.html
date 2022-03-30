@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bowling Game</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="//cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+        <script src = "./throw.js"></script>
+    </head>
+
+    <body>
+        <a-scene id = "scene">
+            <a-assets>
+                <a-asset-item id = "bowling-pin" src="./Bowling Pin/scene.gltf">
+                </a-asset-item>
+            </a-assets>
+
+            <a-entity light = "type:ambient; color:yellow; intensity:0.5">
+            
+            </a-entity>
+            <a-entity id="camera" camera position = "0 1.6 0" wasd-controls look-controls = "pointerLockEnabled:false">
+                
+                <a-cursor></a-cursor>
+            </a-entity>
+            <a-plane id="ground" repeat = "5 5" position = "0 1 0" rotation = "-90 0 0"
+            height = "200"
+            width = "200"
+            color = "green"
+            static-body
+            visible = "true">
+            </a-plane>
+            <a-entity bowling-ball></a-entity>
+            
+            <a-entity>
+                <a-entity id="pin1" gltf-model="#bowling-pin" position="0 1.4 -5.5" scale="2 2 2"></a-entity>
+                <a-entity id="pin2" gltf-model="#bowling-pin" position="0.4 1.4 -5.5" scale="2 2 2"></a-entity>
+                <a-entity id="pin3" gltf-model="#bowling-pin" position="-0.4 1.4 -5.5" scale="2 2 2"></a-entity>
+                <a-entity id="pin4" gltf-model="#bowling-pin" position="-0.19 1.4 -5" scale="2 2 2"></a-entity>
+                <a-entity id="pin5" gltf-model="#bowling-pin" position="0.19 1.4 -5" scale="2 2 2"></a-entity>
+                <a-entity id="pin6" gltf-model="#bowling-pin" position="0 1.4 -5" scale="2 2 2"></a-entity>
+            </a-entity>
+
+        </a-scene>
+    </body>
+</html>
